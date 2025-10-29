@@ -35,7 +35,7 @@ $chatId = 'YOUR_CHAT_ID';
 
 ## ✅ Hook 2 — `radius_dracula_servers.php`
 
-```markdown
+
 # RADIUS Data Cleanup Hook for WHMCS (Dracula Servers)
 
 This WHMCS hook clears user RADIUS traffic usage when a product is terminated.  

@@ -1,72 +1,93 @@
-# Telegram Bot Notification Hook for WHMCS
+Telegram Bot Notification Hook for WHMCS
 
-A lightweight WHMCS hook that sends automated notifications to Telegram using a bot.  
-It can be used to alert admins or customers when certain WHMCS events occur (e.g., new orders, suspensions, terminations).
+This WHMCS hook sends automated notifications to Telegram using a bot. It is designed to notify administrators or customers about important WHMCS lifecycle events such as new orders, invoice payments, service terminations, etc. The message content is customizable and the hook can be easily extended to support more events.
 
----
+Features:
 
-## ✨ Features
+Send instant notifications via Telegram bot
 
-- Send instant notifications via Telegram
-- Compatible with major WHMCS lifecycle events
-- Fully customizable message content
-- Simple and clean code — easy to extend
+Supports multiple WHMCS lifecycle event triggers
 
----
+Easy to configure and customize
 
-## 📦 Requirements
+Lightweight and clean code structure
 
-- WHMCS 8.x+
-- PHP 7.4+
-- Telegram Bot Token & Chat ID
+Requirements:
 
----
+WHMCS 8.x or higher
 
-## 🔧 Installation
+PHP 7.4 or higher
 
-1. Upload the hook file
-2. Edit the file and configure:
-```php
-$botToken = 'YOUR_BOT_TOKEN';
-$chatId = 'YOUR_CHAT_ID';
+Telegram Bot Token and Chat ID
 
+Installation and Configuration:
 
----
+Upload the file to: /includes/hooks/
 
-## ✅ Hook 2 — `radius_dracula_servers.php`
+Open the file and set your Telegram Bot Token and Chat ID in the configuration section
 
+Save the file, no further setup required
 
-# RADIUS Data Cleanup Hook for WHMCS (Dracula Servers)
+Supported Events (can be extended):
 
-This WHMCS hook clears user RADIUS traffic usage when a product is terminated.  
-It ensures accurate accounting and prevents leftover data in the FreeRADIUS database.
+New Order Created
 
----
+Invoice Paid
 
-## ✨ Features
+Service Terminated
 
-- Automatically clears traffic usage on service termination
-- Works directly with RADIUS database tables
-- Protects against overcounting data after cancellation
-- No need for manual admin intervention
+Client Registration
 
----
+License:
+MIT License — free for personal and commercial usage.
 
-## 📦 Requirements
+Contribution:
+Pull requests and improvement suggestions are welcome.
 
-- WHMCS 8.x+
-- PHP 7.4+
-- FreeRADIUS with accounting enabled
-- Proper DB credentials configured inside hook file
+RADIUS Data Cleanup Hook for WHMCS (Dracula Servers)
 
----
+This WHMCS hook clears FreeRADIUS accounting data when a service is terminated in WHMCS. It prevents outdated traffic data from remaining in the database and ensures accurate traffic usage tracking for future services.
 
-## 🔧 Installation
+Features:
 
-1. Upload the hook file
-2. Edit DB connection info inside:
-```php
-$db_host = 'localhost';
-$db_user = 'radius';
-$db_pass = 'password';
-$db_name = 'radius';
+Automatically clears RADIUS traffic data on service termination
+
+Works with common FreeRADIUS accounting tables
+
+Helps maintain clean and accurate database records
+
+Fully automated with no admin action required
+
+Requirements:
+
+WHMCS 8.x or higher
+
+PHP 7.4 or higher
+
+A FreeRADIUS server and database connection
+
+Accounting enabled in FreeRADIUS
+
+Installation and Configuration:
+
+Upload the file to: /includes/hooks/
+
+Edit the database connection details inside the hook file (hostname, username, password, database name, and table names if necessary)
+
+Once saved, the hook will automatically run when a product is terminated in WHMCS
+
+Supported Action:
+
+Service Termination triggers RADIUS accounting cleanup
+
+Notes:
+
+It is recommended to back up the RADIUS database before first deployment
+
+Ensure table names match your FreeRADIUS schema
+
+License:
+MIT License — free for modification and redistribution.
+
+Contribution:
+Issues, optimization suggestions, and pull requests are appreciated.
